@@ -1,16 +1,27 @@
 package com.programacionymas.drivingevaluation.drivers
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.programacionymas.drivingevaluation.data.DriverRepository
 import com.programacionymas.drivingevaluation.domain.Driver
 
 @Composable
-fun DriverList(drivers: List<Driver>) {
-    LazyColumn {
+fun DriverList(
+    contentPadding: PaddingValues = PaddingValues(),
+    drivers: List<Driver>,
+    onEvaluateDriver: (driver: Driver)->Unit = {}
+) {
+    LazyColumn(
+        contentPadding = contentPadding
+    ) {
         items(drivers) { driver ->
-           DriverCard(driver = driver)
+           DriverCard(
+               driver = driver,
+               onEvaluateDriver = onEvaluateDriver
+           )
         }
     }
 }
@@ -18,10 +29,5 @@ fun DriverList(drivers: List<Driver>) {
 @Preview
 @Composable
 fun DriverListPreview() {
-    val dummyData = listOf(
-        Driver("0001", "76474871", "DRIVER NAME 1"),
-        Driver("0002", "67748417", "DRIVER NAME 2"),
-    )
-
-    DriverList(drivers = dummyData)
+    DriverList(drivers = DriverRepository.getDummyData())
 }

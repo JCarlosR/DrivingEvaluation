@@ -5,16 +5,19 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
 
+    <!-- Sign In Screen -->
     <string name="sign_in">Sign in</string>
-    <string name="sign_up">Sign up</string>
     <string name="or">or</string>
-
+    <string name="sign_up">Sign up</string>
     <string name="dismiss">DISMISS</string>
 
-    <!-- Driver -->
+    <!-- Driver Card -->
     <string name="driver_code">Code</string>
     <string name="driver_identity_card">Identity card</string>
     <string name="driver_action_evaluate">Evaluate</string>
+
+    <!-- Drivers List Screen -->
+    <string name="drivers_list">Drivers List</string>
 
     <string name="show_password">Show password</string>
     <string name="hide_password">Hide password</string>

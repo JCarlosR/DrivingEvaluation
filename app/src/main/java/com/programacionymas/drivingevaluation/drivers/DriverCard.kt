@@ -15,7 +15,10 @@ import com.programacionymas.drivingevaluation.R
 import com.programacionymas.drivingevaluation.domain.Driver
 
 @Composable
-fun DriverCard(driver: Driver) {
+fun DriverCard(
+    driver: Driver,
+    onEvaluateDriver: (driver: Driver)->Unit = {}
+) {
     Card(
         elevation = 4.dp,
         modifier = Modifier
@@ -68,7 +71,9 @@ fun DriverCard(driver: Driver) {
             }
 
             Button(
-                onClick = {}
+                onClick = {
+                    onEvaluateDriver(driver)
+                }
             ) {
                 Text(text = stringResource(R.string.driver_action_evaluate))
             }

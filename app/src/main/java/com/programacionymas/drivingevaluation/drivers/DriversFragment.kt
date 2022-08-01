@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.Text
 import androidx.compose.ui.Modifier
@@ -11,6 +12,7 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.text.style.TextAlign
 import androidx.fragment.app.Fragment
 import com.programacionymas.drivingevaluation.R
+import com.programacionymas.drivingevaluation.domain.Driver
 import com.programacionymas.drivingevaluation.theme.DrivingEvaluationTheme
 
 class DriversFragment : Fragment() {
@@ -30,14 +32,20 @@ class DriversFragment : Fragment() {
             )
             setContent {
                 DrivingEvaluationTheme {
-                    Text(
-                        text = "Drivers List - Fragment",
-                        modifier = Modifier.fillMaxWidth(),
-                        textAlign = TextAlign.Center
-                    )
+                    DriversScreen(onNavigationEvent = { driversEvent ->
+                        when (driversEvent) {
+                            is DriversScreenEvent.Evaluate -> {
+                                evaluate(driversEvent.driver)
+                            }
+                        }
+                    })
                 }
             }
         }
+    }
+
+    private fun evaluate(driver: Driver) {
+        Toast.makeText(context, "Evaluate driver ${driver.fullName}", Toast.LENGTH_LONG).show()
     }
 
 }

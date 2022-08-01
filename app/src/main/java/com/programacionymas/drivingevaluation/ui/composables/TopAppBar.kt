@@ -13,7 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun SignInTopAppBar(topAppBarText: String) {
+fun TopAppBar(topAppBarText: String) {
     TopAppBar(
         title = {
             Text(
@@ -31,6 +31,6 @@ fun SignInTopAppBar(topAppBarText: String) {
 
 @Preview
 @Composable
-fun SignInTopAppBarPreview() {
-    SignInTopAppBar(topAppBarText = "TopAppBar Title")
+fun TopAppBarPreview() {
+    TopAppBar(topAppBarText = "TopAppBar Title")
 }

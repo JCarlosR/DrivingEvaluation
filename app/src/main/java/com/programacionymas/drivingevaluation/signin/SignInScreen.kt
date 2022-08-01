@@ -16,7 +16,7 @@ import com.programacionymas.drivingevaluation.R
 import com.programacionymas.drivingevaluation.signin.content.SignInContainer
 import com.programacionymas.drivingevaluation.signin.content.SignInForm
 import com.programacionymas.drivingevaluation.signin.error.ErrorSnackbar
-import com.programacionymas.drivingevaluation.signin.top.SignInTopAppBar
+import com.programacionymas.drivingevaluation.signin.top.TopAppBar
 import com.programacionymas.drivingevaluation.theme.DrivingEvaluationTheme
 
 sealed class SignInEvent {
@@ -32,7 +32,7 @@ fun SignIn(onNavigationEvent: (SignInEvent) -> Unit) {
 
     Scaffold(
         topBar = {
-            SignInTopAppBar(
+            TopAppBar(
                 topAppBarText = stringResource(id = R.string.sign_in)
             )
         },
