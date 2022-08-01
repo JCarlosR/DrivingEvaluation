@@ -20,6 +20,8 @@
     <string name="drivers_list">Drivers List</string>
 
     <!-- Driving Test -->
+    <string name="driver_test_evaluation_title">Driving Test</string>
+    <string name="submit_test">Submit Test</string>
     <string name="competent_yes">Complies</string>
     <string name="competent_no">Does not comply</string>
 

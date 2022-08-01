@@ -8,9 +8,9 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.programacionymas.drivingevaluation.R
+import com.programacionymas.drivingevaluation.theme.DrivingEvaluationTheme
 import com.programacionymas.drivingevaluation.ui.Screen
 import com.programacionymas.drivingevaluation.ui.navigate
-import com.programacionymas.drivingevaluation.theme.DrivingEvaluationTheme
 
 /**
  * Fragment containing the sign in UI.
@@ -49,9 +49,6 @@ class SignInFragment : Fragment() {
                                 }
                                 SignInEvent.SignUp -> {
                                     viewModel.signUp()
-                                }
-                                SignInEvent.NavigateBack -> {
-                                    activity?.onBackPressedDispatcher?.onBackPressed()
                                 }
                             }
                         }

@@ -16,4 +16,10 @@
         android:label="Drivers List">
     </fragment>
 
+    <fragment
+        android:id="@+id/test_fragment"
+        android:name="com.programacionymas.drivingevaluation.test.TestFragment"
+        android:label="Driving Test">
+    </fragment>
+
 </navigation>

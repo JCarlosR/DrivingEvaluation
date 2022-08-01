@@ -22,7 +22,6 @@ import com.programacionymas.drivingevaluation.theme.DrivingEvaluationTheme
 sealed class SignInEvent {
     data class SignIn(val email: String, val password: String) : SignInEvent()
     object SignUp : SignInEvent()
-    object NavigateBack : SignInEvent()
 }
 
 @Composable
