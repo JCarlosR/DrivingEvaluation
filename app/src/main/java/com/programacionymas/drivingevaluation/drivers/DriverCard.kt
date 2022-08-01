@@ -20,6 +20,7 @@ fun DriverCard(driver: Driver) {
         elevation = 4.dp,
         modifier = Modifier
             .fillMaxWidth()
+            .padding(12.dp)
     ) {
         Column(
             modifier = Modifier.padding(12.dp),
