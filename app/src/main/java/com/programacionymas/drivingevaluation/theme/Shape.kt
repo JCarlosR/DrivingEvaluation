@@ -1,4 +1,4 @@
-package com.programacionymas.drivingevaluation.ui.theme
+package com.programacionymas.drivingevaluation.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

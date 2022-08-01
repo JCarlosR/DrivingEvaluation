@@ -1,4 +1,4 @@
-package com.programacionymas.drivingevaluation.ui.theme
+package com.programacionymas.drivingevaluation.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
