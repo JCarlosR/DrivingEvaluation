@@ -11,11 +11,10 @@
 
     <string name="dismiss">DISMISS</string>
 
-    <string name="next">NEXT</string>
-    <string name="previous">PREVIOUS</string>
-    <string name="done">DONE</string>
-    <string name="back">Back</string>
-    <string name="close">Close</string>
+    <!-- Driver -->
+    <string name="driver_code">Code</string>
+    <string name="driver_identity_card">Identity card</string>
+    <string name="driver_action_evaluate">Evaluate</string>
 
     <string name="show_password">Show password</string>
     <string name="hide_password">Hide password</string>
