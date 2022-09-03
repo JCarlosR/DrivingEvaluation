@@ -35,8 +35,8 @@ object QuestionRepository {
         })
     }
 
-    fun getDummyData(): List<Question> {
-        return listOf(
+    fun getDummyData(): ArrayList<Question> {
+        return arrayListOf(
             Question(1, "Is the driver able to do ABC?", "Very important (4 pts)"),
             Question(2, "Is the driver able to do CYZ?", "Less important (2 pts)"),
         )

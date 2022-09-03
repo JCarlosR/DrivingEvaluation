@@ -11,7 +11,7 @@ import com.programacionymas.drivingevaluation.R
 import com.programacionymas.drivingevaluation.domain.Answer
 import com.programacionymas.drivingevaluation.theme.DrivingEvaluationTheme
 
-class TestFragment : Fragment() {
+class EvaluationFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,

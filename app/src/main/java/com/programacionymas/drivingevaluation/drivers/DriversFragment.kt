@@ -53,7 +53,6 @@ class DriversFragment : Fragment() {
     }
 
     private fun evaluate(driver: Driver) {
-        Toast.makeText(context, "Evaluate driver ${driver.fullName}", Toast.LENGTH_LONG).show()
         viewModel.evaluate(driver)
     }
 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sign_in">Ingresar</string>
+    <string name="or">o</string>
+    <string name="sign_up">Registrar usuario</string>
+    <string name="dismiss">CERRAR</string>
+    <string name="driver_code">Código</string>
+    <string name="driver_identity_card">DNI</string>
+    <string name="driver_action_evaluate">Evaluar</string>
+    <string name="drivers_list">Lista de conductores</string>
+    <string name="search_action">Buscar</string>
+    <string name="input_date_label">Ingresa una fecha</string>
+    <string name="driver_test_evaluation_title">Evaluando %1$s</string>
+    <string name="submit_test">Enviar respuestas</string>
+    <string name="competent_yes">Cumple</string>
+    <string name="competent_no">No cumple</string>
+    <string name="show_password">Mostrar contraseña</string>
+    <string name="hide_password">Ocultar contraseña</string>
+    <string name="email">Correo</string>
+    <string name="password">Contraseña</string>
+</resources>

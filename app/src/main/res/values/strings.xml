@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_name">Driving Evaluation</string>
+    <string name="app_name" translatable="false">Driving Evaluation</string>
 
     <string name="email">Email</string>
     <string name="password">Password</string>
@@ -22,7 +22,7 @@
     <string name="input_date_label">Enter a date</string>
 
     <!-- Driving Test -->
-    <string name="driver_test_evaluation_title">Driving Test</string>
+    <string name="driver_test_evaluation_title">Evaluating %1$s</string>
     <string name="submit_test">Submit Test</string>
     <string name="competent_yes">Complies</string>
     <string name="competent_no">Does not comply</string>

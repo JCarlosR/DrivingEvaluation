@@ -13,6 +13,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.programacionymas.drivingevaluation.R
+import com.programacionymas.drivingevaluation.data.EvaluationRepository
 import com.programacionymas.drivingevaluation.data.QuestionRepository
 import com.programacionymas.drivingevaluation.domain.Answer
 import com.programacionymas.drivingevaluation.signin.top.TopAppBar
@@ -28,7 +29,10 @@ fun TestScreen(onNavigationEvent: (TestScreenEvent) -> Unit) {
     Scaffold(
         topBar = {
             TopAppBar(
-                topAppBarText = stringResource(R.string.driver_test_evaluation_title)
+                topAppBarText = stringResource(
+                    R.string.driver_test_evaluation_title,
+                    EvaluationRepository.driver?.fullName ?: "Driver"
+                )
             )
         },
         content = { contentPadding ->
@@ -56,6 +60,8 @@ fun TestScreen(onNavigationEvent: (TestScreenEvent) -> Unit) {
 @Preview(name = "Sign in light theme")
 @Composable
 fun DriverScreenPreview() {
+    QuestionRepository.questions = QuestionRepository.getDummyData()
+
     DrivingEvaluationTheme {
         TestScreen {}
     }
@@ -64,6 +70,8 @@ fun DriverScreenPreview() {
 @Preview(name = "Sign in dark theme")
 @Composable
 fun SignInPreviewDark() {
+    QuestionRepository.questions = QuestionRepository.getDummyData()
+
     DrivingEvaluationTheme(darkTheme = true) {
         TestScreen {}
     }
