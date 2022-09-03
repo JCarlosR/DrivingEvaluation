@@ -1,4 +1,4 @@
-package com.programacionymas.drivingevaluation.test
+package com.programacionymas.drivingevaluation.evaluation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -34,9 +34,9 @@ class TestFragment : Fragment() {
                             is TestScreenEvent.SubmitTest -> {
                                 submit(testEvent.answers)
                             }
-                            /*TestScreenEvent.NavigateBack -> {
+                            TestScreenEvent.NavigateBack -> {
                                 activity?.onBackPressedDispatcher?.onBackPressed()
-                            }*/
+                            }
                         }
                     })
                 }

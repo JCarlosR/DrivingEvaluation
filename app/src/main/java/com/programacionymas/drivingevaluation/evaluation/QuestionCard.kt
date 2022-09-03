@@ -1,4 +1,4 @@
-package com.programacionymas.drivingevaluation.test
+package com.programacionymas.drivingevaluation.evaluation
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Card

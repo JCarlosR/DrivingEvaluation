@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/test_fragment"
-        android:name="com.programacionymas.drivingevaluation.test.TestFragment"
+        android:name="com.programacionymas.drivingevaluation.evaluation.TestFragment"
         android:label="Driving Test">
     </fragment>
 

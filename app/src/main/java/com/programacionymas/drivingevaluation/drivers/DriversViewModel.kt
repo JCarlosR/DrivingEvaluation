@@ -15,8 +15,14 @@ class DriversViewModel(private val driversRepository: DriverRepository) : ViewMo
     val navigateTo: LiveData<Event<Screen>>
         get() = _navigateTo
 
+    val driversData = driversRepository.driversLiveData
+
     fun evaluate(driver: Driver) {
         _navigateTo.value = Event(Screen.Test)
+    }
+
+    init {
+        driversRepository.fetchDrivers()
     }
 
 }
@@ -27,6 +33,7 @@ class DriversViewModelFactory : ViewModelProvider.Factory {
         if (modelClass.isAssignableFrom(DriversViewModel::class.java)) {
             return DriversViewModel(DriverRepository) as T
         }
+
         throw IllegalArgumentException("Unknown ViewModel class")
     }
 }

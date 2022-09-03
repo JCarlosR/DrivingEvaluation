@@ -18,8 +18,9 @@ class SignInViewModel(private val userRepository: UserRepository) : ViewModel() 
      * Consider all sign ins successful
      */
     fun signIn(email: String, password: String) {
-        userRepository.signIn(email, password)
-        _navigateTo.value = Event(Screen.DriversList)
+        userRepository.signIn(email, password) {
+            _navigateTo.value = Event(Screen.DriversList)
+        }
     }
 
     fun signUp() {

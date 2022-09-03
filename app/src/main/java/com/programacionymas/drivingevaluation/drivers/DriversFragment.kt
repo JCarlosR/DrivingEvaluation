@@ -40,7 +40,7 @@ class DriversFragment : Fragment() {
 
             setContent {
                 DrivingEvaluationTheme {
-                    DriversScreen(onNavigationEvent = { driversEvent ->
+                    DriversScreen(viewModel, onNavigationEvent = { driversEvent ->
                         when (driversEvent) {
                             is DriversScreenEvent.Evaluate -> {
                                 evaluate(driversEvent.driver)

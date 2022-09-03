@@ -1,4 +1,4 @@
-package com.programacionymas.drivingevaluation.test
+package com.programacionymas.drivingevaluation.evaluation
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.lazy.LazyColumn

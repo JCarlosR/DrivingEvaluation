@@ -14,7 +14,7 @@ import com.programacionymas.drivingevaluation.domain.Driver
 @Composable
 fun DriverList(
     contentPadding: PaddingValues = PaddingValues(),
-    drivers: List<Driver>,
+    drivers: ArrayList<Driver>,
     onEvaluateDriver: (driver: Driver)->Unit = {}
 ) {
     LazyColumn(

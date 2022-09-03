@@ -86,6 +86,7 @@ fun DriverCard(
 fun DriverCardPreview() {
     DriverCard(
         Driver(
+            id = "111",
             code = "CEP-2022-5080",
             identityCard = "41084592",
             fullName = "DRIVER'S FULL NAME"

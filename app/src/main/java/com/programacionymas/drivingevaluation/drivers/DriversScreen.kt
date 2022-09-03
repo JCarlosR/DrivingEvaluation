@@ -17,7 +17,7 @@ sealed class DriversScreenEvent {
 }
 
 @Composable
-fun DriversScreen(onNavigationEvent: (DriversScreenEvent) -> Unit) {
+fun DriversScreen(viewModel: DriversViewModel?, onNavigationEvent: (DriversScreenEvent) -> Unit) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -27,7 +27,7 @@ fun DriversScreen(onNavigationEvent: (DriversScreenEvent) -> Unit) {
         content = { contentPadding ->
             DriverList(
                 contentPadding = contentPadding,
-                drivers = DriverRepository.getDummyData(),
+                drivers = viewModel?.driversData?.value ?: ArrayList(),
                 onEvaluateDriver = { driver ->
                     onNavigationEvent(DriversScreenEvent.Evaluate(driver))
                 }
@@ -40,7 +40,7 @@ fun DriversScreen(onNavigationEvent: (DriversScreenEvent) -> Unit) {
 @Composable
 fun DriverScreenPreview() {
     DrivingEvaluationTheme {
-        DriversScreen {}
+        DriversScreen(viewModel = null) {}
     }
 }
 
@@ -48,6 +48,6 @@ fun DriverScreenPreview() {
 @Composable
 fun SignInPreviewDark() {
     DrivingEvaluationTheme(darkTheme = true) {
-        DriversScreen {}
+        DriversScreen(viewModel = null) {}
     }
 }
