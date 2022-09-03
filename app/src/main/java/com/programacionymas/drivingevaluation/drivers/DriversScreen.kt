@@ -3,6 +3,8 @@ package com.programacionymas.drivingevaluation.drivers
 import androidx.compose.material.Scaffold
 import androidx.compose.material.SnackbarHostState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.State
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.remember
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -25,9 +27,14 @@ fun DriversScreen(viewModel: DriversViewModel?, onNavigationEvent: (DriversScree
             )
         },
         content = { contentPadding ->
+            if (viewModel == null) return@Scaffold
+
+            val driversState = viewModel.driversData.observeAsState()
+            val driversList = driversState.value ?: return@Scaffold
+
             DriverList(
                 contentPadding = contentPadding,
-                drivers = viewModel?.driversData?.value ?: ArrayList(),
+                drivers = driversList,
                 onEvaluateDriver = { driver ->
                     onNavigationEvent(DriversScreenEvent.Evaluate(driver))
                 }
