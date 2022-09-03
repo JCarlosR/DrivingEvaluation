@@ -38,8 +38,9 @@ fun TestScreen(onNavigationEvent: (TestScreenEvent) -> Unit) {
             ) {
                 QuestionList(
                     contentPadding = contentPadding,
-                    questions = QuestionRepository.getDummyData()
+                    questions = QuestionRepository.questions
                 )
+
                 Button(
                     onClick = {
                         onNavigationEvent(TestScreenEvent.SubmitTest(listOf()))

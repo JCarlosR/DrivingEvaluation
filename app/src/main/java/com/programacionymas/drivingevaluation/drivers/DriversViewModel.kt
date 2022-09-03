@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.programacionymas.drivingevaluation.data.DriverRepository
+import com.programacionymas.drivingevaluation.data.QuestionRepository
 import com.programacionymas.drivingevaluation.domain.Driver
 import com.programacionymas.drivingevaluation.ui.Screen
 import com.programacionymas.drivingevaluation.util.Event
@@ -18,12 +19,15 @@ class DriversViewModel(private val driversRepository: DriverRepository) : ViewMo
     val driversData = driversRepository.driversLiveData
 
     fun evaluate(driver: Driver) {
-        _navigateTo.value = Event(Screen.Test)
+        QuestionRepository.fetchQuestions {
+            _navigateTo.value = Event(Screen.Test)
+        }
     }
 
+    /*
     init {
-        // driversRepository.fetchDrivers()
-    }
+        driversRepository.fetchDrivers()
+    }*/
 
 }
 

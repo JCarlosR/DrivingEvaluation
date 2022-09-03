@@ -20,7 +20,9 @@ interface DriverApiService {
     ): Call<ArrayList<Driver>>
 
     @GET("drivers-test")
-    fun getQuestions(): Call<ArrayList<Question>>
+    fun getQuestions(
+        @Header("Authorization") authorization: String,
+    ): Call<ArrayList<Question>>
 
     @POST("auth/loginApp")
     fun postLogin(
@@ -29,6 +31,7 @@ interface DriverApiService {
 
     @POST("drivers/8494/evaluation")
     fun postEvaluation(
+        @Header("Authorization") authorization: String,
         @Body evaluationBody: ArrayList<Answer>
     ): Call<SimpleResponse>
 }
