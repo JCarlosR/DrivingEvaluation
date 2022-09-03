@@ -11,13 +11,12 @@ import retrofit2.Response
 object DriverRepository {
     var driversLiveData: MutableLiveData<ArrayList<Driver>> = MutableLiveData()
 
-    fun fetchDrivers() {
+    fun fetchDrivers(date: String) {
         val accessToken = (UserRepository.user as User.LoggedInUser).accessToken
-        val authorizationHeader = "Bearer ${accessToken}"
+        val authorizationHeader = "Bearer $accessToken"
 
         DriverApiAdapter.getApiService().getDrivers(
-            authorizationHeader,
-            "22/08/2022"
+            authorizationHeader, date
         ).enqueue(object :Callback<ArrayList<Driver>> {
             override fun onResponse(
                 call: Call<ArrayList<Driver>>,

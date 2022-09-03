@@ -18,6 +18,8 @@
 
     <!-- Drivers List Screen -->
     <string name="drivers_list">Drivers List</string>
+    <string name="search_action">Search</string>
+    <string name="input_date_label">Enter a date</string>
 
     <!-- Driving Test -->
     <string name="driver_test_evaluation_title">Driving Test</string>

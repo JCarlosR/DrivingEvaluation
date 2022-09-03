@@ -22,7 +22,7 @@ class DriversViewModel(private val driversRepository: DriverRepository) : ViewMo
     }
 
     init {
-        driversRepository.fetchDrivers()
+        // driversRepository.fetchDrivers()
     }
 
 }
