@@ -14,12 +14,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.programacionymas.drivingevaluation.R
+import com.programacionymas.drivingevaluation.domain.Answer
 import com.programacionymas.drivingevaluation.domain.Question
 
 @Composable
 fun QuestionCard(
-    question: Question
+    question: Question,
+    answer: Int = Answer.NO_ANSWER,
+    onOptionChanged: (newOptionSelected: Int)->(Unit) = {}
 ) {
+
     Card(
         elevation = 4.dp,
         modifier = Modifier
@@ -57,16 +61,20 @@ fun QuestionCard(
                 horizontalArrangement = Arrangement.Center
             ) {
                 RadioButton(
-                    selected = true,
-                    onClick = { }
+                    selected = answer == Answer.DOES_COMPLY,
+                    onClick = {
+                        onOptionChanged(Answer.DOES_COMPLY)
+                    }
                 )
                 Text(text = stringResource(R.string.competent_yes))
 
                 Spacer(modifier = Modifier.width(12.dp))
 
                 RadioButton(
-                    selected = false,
-                    onClick = { }
+                    selected = answer == Answer.DOES_NOT_COMPLY,
+                    onClick = {
+                        onOptionChanged(Answer.DOES_NOT_COMPLY)
+                    }
                 )
                 Text(text = stringResource(R.string.competent_no))
             }

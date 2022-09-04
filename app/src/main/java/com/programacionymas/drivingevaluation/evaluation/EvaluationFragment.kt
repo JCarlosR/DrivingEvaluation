@@ -1,6 +1,7 @@
 package com.programacionymas.drivingevaluation.evaluation
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
 import com.programacionymas.drivingevaluation.R
 import com.programacionymas.drivingevaluation.domain.Answer
+import com.programacionymas.drivingevaluation.network.DriverApiAdapter
 import com.programacionymas.drivingevaluation.theme.DrivingEvaluationTheme
 
 class EvaluationFragment : Fragment() {
@@ -35,7 +37,7 @@ class EvaluationFragment : Fragment() {
                                 submit(testEvent.answers)
                             }
                             TestScreenEvent.NavigateBack -> {
-                                activity?.onBackPressedDispatcher?.onBackPressed()
+                                goBack()
                             }
                         }
                     })
@@ -45,8 +47,22 @@ class EvaluationFragment : Fragment() {
     }
 
     private fun submit(answers: List<Answer>) {
-        Toast.makeText(context, "Submit test with ${answers.size} answers", Toast.LENGTH_LONG)
+        answers.forEach {
+            Log.d(TAG, it.toString())
+        }
+
+        Toast.makeText(context, getString(R.string.submitting_test, answers.size), Toast.LENGTH_SHORT)
             .show()
+
+        // DriverApiAdapter.getApiService().postEvaluation()
+    }
+
+    private fun goBack() {
+        activity?.onBackPressedDispatcher?.onBackPressed()
+    }
+
+    companion object {
+        private const val TAG = "EvaluationFragment"
     }
 
 }

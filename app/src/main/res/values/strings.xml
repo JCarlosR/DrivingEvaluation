@@ -23,6 +23,7 @@
 
     <!-- Driving Test -->
     <string name="driver_test_evaluation_title">Evaluating %1$s</string>
+    <string name="submitting_test">Submitting test with %1$d answers</string>
     <string name="submit_test">Submit Test</string>
     <string name="competent_yes">Complies</string>
     <string name="competent_no">Does not comply</string>

@@ -10,7 +10,10 @@
     <string name="drivers_list">Lista de conductores</string>
     <string name="search_action">Buscar</string>
     <string name="input_date_label">Ingresa una fecha</string>
+
     <string name="driver_test_evaluation_title">Evaluando %1$s</string>
+    <string name="submitting_test">Enviando test con %1$d respuestas</string>
+
     <string name="submit_test">Enviar respuestas</string>
     <string name="competent_yes">Cumple</string>
     <string name="competent_no">No cumple</string>
