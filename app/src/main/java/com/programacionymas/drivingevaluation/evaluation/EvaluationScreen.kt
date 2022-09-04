@@ -26,7 +26,7 @@ import com.programacionymas.drivingevaluation.signin.top.TopAppBar
 import com.programacionymas.drivingevaluation.theme.DrivingEvaluationTheme
 
 sealed class TestScreenEvent {
-    data class SubmitTest(val answers: List<Answer>) : TestScreenEvent()
+    data class SubmitTest(val answers: ArrayList<Answer>) : TestScreenEvent()
     object NavigateBack : TestScreenEvent()
 }
 
@@ -70,7 +70,10 @@ fun TestScreen(onNavigationEvent: (TestScreenEvent) -> Unit) {
 
                 Button(
                     onClick = {
-                        val testAnswers = questions.map { q -> Answer.fromQuestion(q) }
+                        val testAnswers = ArrayList(
+                            questions.map { q -> Answer.fromQuestion(q) }
+                        )
+
                         onNavigationEvent(TestScreenEvent.SubmitTest(testAnswers))
                     }
                 ) {

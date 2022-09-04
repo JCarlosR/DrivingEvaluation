@@ -12,7 +12,8 @@
     <string name="input_date_label">Ingresa una fecha</string>
 
     <string name="driver_test_evaluation_title">Evaluando %1$s</string>
-    <string name="submitting_test">Enviando test con %1$d respuestas</string>
+    <string name="submitted_test">Test enviado exitosamente con %1$d respuestas</string>
+    <string name="error_submitting_test">Ocurrió un error enviando las respuestas</string>
 
     <string name="submit_test">Enviar respuestas</string>
     <string name="competent_yes">Cumple</string>
