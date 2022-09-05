@@ -64,7 +64,7 @@ class EvaluationFragment : Fragment() {
         val authorizationHeader = "Bearer $accessToken"
 
         DriverApiAdapter.getApiService()
-            .getEvaluation(authorizationHeader, driverId, answers)
+            .postEvaluation(authorizationHeader, driverId, answers)
             .enqueue(object : Callback<SimpleResponse> {
                 override fun onResponse(
                     call: Call<SimpleResponse>,

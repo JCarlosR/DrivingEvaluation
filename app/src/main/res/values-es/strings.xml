@@ -22,4 +22,5 @@
     <string name="hide_password">Ocultar contraseña</string>
     <string name="email">Correo</string>
     <string name="password">Contraseña</string>
+    <string name="driver_already_evaluated">Ya ha sido evaluado</string>
 </resources>

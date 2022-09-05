@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -70,12 +71,19 @@ fun DriverCard(
                 )
             }
 
-            Button(
-                onClick = {
-                    onEvaluateDriver(driver)
+            if (driver.alreadyEvaluated()) {
+                Text(
+                    text = stringResource(R.string.driver_already_evaluated),
+                    fontStyle = FontStyle.Italic
+                )
+            } else {
+                Button(
+                    onClick = {
+                        onEvaluateDriver(driver)
+                    }
+                ) {
+                    Text(text = stringResource(R.string.driver_action_evaluate))
                 }
-            ) {
-                Text(text = stringResource(R.string.driver_action_evaluate))
             }
         }
     }
@@ -89,7 +97,8 @@ fun DriverCardPreview() {
             id = "111",
             code = "CEP-2022-5080",
             identityCard = "41084592",
-            fullName = "DRIVER'S FULL NAME"
+            fullName = "DRIVER'S FULL NAME",
+            evaluated = Driver.EVALUATED_NOT_YET
         )
     )
 }

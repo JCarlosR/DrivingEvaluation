@@ -10,5 +10,16 @@ data class Driver (
     val identityCard: String,
 
     @SerializedName("full_name")
-    val fullName: String
-)
+    val fullName: String,
+
+    var evaluated: String = EVALUATED_NOT_YET
+) {
+    fun alreadyEvaluated(): Boolean {
+        return evaluated == EVALUATED_ALREADY
+    }
+
+    companion object {
+        const val EVALUATED_ALREADY = "1"
+        const val EVALUATED_NOT_YET = "0"
+    }
+}

@@ -20,6 +20,7 @@
     <string name="drivers_list">Drivers List</string>
     <string name="search_action">Search</string>
     <string name="input_date_label">Enter a date</string>
+    <string name="date_input_format" translatable="false">dd/mm/yyyy</string>
 
     <!-- Driving Test -->
     <string name="driver_test_evaluation_title">Evaluating %1$s</string>
@@ -31,5 +32,6 @@
 
     <string name="show_password">Show password</string>
     <string name="hide_password">Hide password</string>
+    <string name="driver_already_evaluated">Driver already evaluated</string>
 
 </resources>

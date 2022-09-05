@@ -29,9 +29,8 @@ interface DriverApiService {
         @Body loginRequest: LoginRequest
     ): Call<LoginResponse>
 
-    // TODO: Change to POST method on the API
     @POST("drivers/{driverId}/evaluation")
-    fun getEvaluation(
+    fun postEvaluation(
         @Header("Authorization") authorization: String,
         @Path("driverId") driverId: String,
         @Body evaluationBody: ArrayList<Answer>

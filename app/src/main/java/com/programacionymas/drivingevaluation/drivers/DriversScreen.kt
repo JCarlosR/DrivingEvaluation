@@ -62,6 +62,9 @@ fun TopSearch() {
     ) {
         OutlinedTextField(
             value = dateText.value,
+            placeholder = {
+                  Text(stringResource(R.string.date_input_format))
+            },
             label = {
                 CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.medium) {
                     Text(
